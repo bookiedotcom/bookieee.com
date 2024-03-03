@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Covered+By+Your+Grace&family=Graduate&family=Red+Hat+Mono&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+   <link rel="stylesheet" href="style.css">
+    <title>Bookieee™️</title>
+</head>
+<body>
+     <div class="nav">
+<div class="logo">
+<img  src="favicon.png" alt="bookiee.com">
+<h1>Bookieee™️</h1>
+
+</div>
+<div class="tab">
+<a href="">
+Novel
+</a>
+<a href="">
+ Dairies
+</a>
+
+<a href="">
+Other books
+</a>
+</div>
+
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <div  class="mid">
+      
+      <div class="box">
+        <img src="doglapan.jpg" alt="Book 1">
+        <a href="https://wa.link/rew362"><button class="buy-btn">RS 250</button></a>
+    </div>
+    <div class="box">
+        <img src="101.jpg" alt="Book 2">
+        <a href="https://wa.link/vkcu9n"><button class="buy-btn">RS 245</button></a>
+    </div>
+    <div class="box">
+        <img src="ceo.png" alt="Book 3">
+        <a href="https://api.whatsapp.com/send?phone=918859588529&text=Hi%20%40bookieee.com%0AI%20want%20to%20purchase%20%3A-%0A%F0%9F%93%94*How%20to%20become%20CEO*%0A%20%E2%9D%A4%EF%B8%8F%E2%82%B9%20%20250%0A%0AI%20confirm%20my%20purchase%20generate%20%20payment%20link"><button class="buy-btn">RS 250</button></a>
+    </div>
+    <div class="box">
+        <img src="chearan.jpg" alt="Book 4">
+        <a href="https://wa.link/01obcf"><button class="buy-btn">RS 199</button></a>
+    </div>
+    <div class="box">
+        <img src="zen.jpg" alt="Book 5">
+        <a href="https://wa.link/vin7px"><button class="buy-btn">RS 239</button></a>
+    </div>
+    <div class="box">
+        <img src="thinklike.jpg" alt="Book 6">
+        <a href="https://wa.link/ro9r17"><button class="buy-btn">RS 249</button></a>
+    </div>
+    
+
+     </div>
+
+
+
+    
+      <footer>
+        <div class="contact-info">
+            <form id="unavailable-book-form">
+                <input type="text" id="book-name" placeholder="Enter book name...">
+                <button type="submit">Submit</button>
+            </form>
+            <p id="notification" style="display: none;">Thank you! The book will be listed within the next 15 minutes.</p>
+       
+            <p>WhatsApp: <a href="https://wa.me/+918859588529">+91 8859588529</a></p>
+            <p>Call: <a href="tel:+1234567890">+91 8859588529</a></p>
+            <p>Email: <a href="mailto:help@bookiee.com">help@example.com</a></p>
+        </div>
+    </footer>
+
+   
+    
+    <!-- JavaScript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('unavailable-book-form');
+        const notification = document.getElementById('notification');
+    
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+    
+            const bookName = document.getElementById('book-name').value;
+    
+            fetch('/submit-book', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ bookName })
+            })
+            .then(response => {
+                if (response.ok) {
+                    notification.style.display = 'block';
+                    form.reset();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    });
+    </script>
+    <script src="index.js"></script>
+   
+   
+</body>
+</html>
